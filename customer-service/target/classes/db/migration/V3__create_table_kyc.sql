@@ -1,0 +1,8 @@
+CREATE TABLE kyc(
+id BIGINT AUTO_INCREMENT,
+customer_id BIGINT UNIQUE,
+aadhar_card VARCHAR(12),
+pan_card VARCHAR(10),
+PRIMARY KEY(id),
+FOREIGN KEY(customer_id) REFERENCES customer(id) ON DELETE CASCADE
+);

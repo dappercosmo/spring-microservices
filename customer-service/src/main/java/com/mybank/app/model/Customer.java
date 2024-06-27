@@ -1,9 +1,6 @@
 package com.mybank.app.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,8 +20,21 @@ public class Customer {
     private long id;
     private String firstName;
     private String lastName;
+    private String phoneNumber;
+    private boolean isPhoneNumberVerified;
     private String email;
+    private boolean isEmailVerified;
     private String password;
+    private boolean isKycSuccess;
     private Date createdOn;
+    private boolean isActive;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "address_id", referencedColumnName = "id")
+    private Address address;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "kyc_id", referencedColumnName = "id")
+    private Kyc kyc;
 
 }
