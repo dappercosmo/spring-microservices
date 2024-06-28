@@ -25,4 +25,8 @@ public class Account {
     @OneToOne(mappedBy = "account")
     private Customer customer;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "branch_id", referencedColumnName = "id")
+    private Branch branch;
+
 }

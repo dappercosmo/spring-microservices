@@ -1,0 +1,3 @@
+ALTER TABLE branch
+ADD COLUMN account_id BIGINT UNIQUE,
+ADD CONSTRAINT fk_account FOREIGN KEY(account_id) REFERENCES account(id) ON DELETE CASCADE
