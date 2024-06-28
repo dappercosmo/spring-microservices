@@ -26,6 +26,7 @@ public class Customer {
     private boolean isEmailVerified;
     private String password;
     private boolean isKycSuccess;
+    private Date dob;
     private Date createdOn;
     private boolean isActive;
 
@@ -36,5 +37,9 @@ public class Customer {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "kyc_id", referencedColumnName = "id")
     private Kyc kyc;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "account_id", referencedColumnName = "id")
+    private Account account;
 
 }
