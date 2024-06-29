@@ -17,7 +17,7 @@ public class Account {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String accountNumber;
-    private String balance;
+    private String balance = "0";
 
     @Enumerated(EnumType.STRING)
     private AccountType accountType;

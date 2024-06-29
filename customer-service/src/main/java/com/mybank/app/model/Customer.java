@@ -35,10 +35,6 @@ public class Customer {
     private Address address;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "kyc_id", referencedColumnName = "id")
-    private Kyc kyc;
-
-    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "account_id", referencedColumnName = "id")
     private Account account;
 

@@ -1,3 +1,4 @@
+
 package com.mybank.app.model;
 
 import jakarta.persistence.*;
